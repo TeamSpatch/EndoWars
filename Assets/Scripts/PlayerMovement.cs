@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (cooldown > 0f) {
+            cooldown -= Time.fixedDeltaTime;
+        }
         if (cooldown <= 0f) {
             if (Input.GetButton("Move")) {
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
                 rigid.AddForce(distance * forceFactor * (new Vector2(mousePosition.x, mousePosition.y) - new Vector2(transform.position.x, transform.position.y)).normalized);
                 cooldown = cooldownDuration;
             }
-        } else {
-            cooldown -= Time.fixedDeltaTime;
         }
     }
 }
