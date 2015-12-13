@@ -45,15 +45,14 @@ public class EnemySpawn : MonoBehaviour
                         }
                     }
                 }
-                GameObject obj = GameObject.Instantiate(Resources.Load("Enemy") as GameObject);
-                obj.transform.position = pos;
-                Enemy enemy = obj.GetComponent<Enemy>();
+                GameObject obj;
                 int r = Random.Range(0, 2);
                 if (r == 0) {
-                    enemy.color = Projectile.Color.Red;
+                    obj = GameObject.Instantiate(Resources.Load("RedEnemy") as GameObject);
                 } else {
-                    enemy.color = Projectile.Color.Green;
+                    obj = GameObject.Instantiate(Resources.Load("GreenEnemy") as GameObject);
                 }
+                obj.transform.position = pos;
                 cooldown = cooldownDuration;
             }
         }
