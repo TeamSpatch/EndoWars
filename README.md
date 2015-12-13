@@ -1,6 +1,4 @@
-# GrowingDare
-
-Ludum Dare 34 Jam Entry - Growing, Two button controls
+# Growing Dare
 
 ## Technical
 
