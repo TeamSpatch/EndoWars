@@ -19,6 +19,7 @@ public class Hook : MonoBehaviour
             Canon canon = enemy.FindChild("Canon").GetComponent<Canon>();
             canon.color = enemy.gameObject.GetComponent<Enemy>().color;
             canon.enabled = true;
+            ++other.gameObject.GetComponent<PlayerStatus>().blackness;
         }
     }
 }
