@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour
         if (isFriendly) {
             if (other.gameObject.tag == "Enemy") {
                 Enemy enemy = other.gameObject.GetComponent<Enemy>();
-                if (!enemy.isDead && (color == Color.White || enemy.color == color)) {
+                if (!enemy.isCaptured && !enemy.isDead && (color == Color.White || enemy.color == color)) {
                     enemy.Die();
                     Destroy(gameObject);
                 }

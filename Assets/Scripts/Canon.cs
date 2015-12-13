@@ -27,7 +27,7 @@ public class Canon : MonoBehaviour
             Projectile projectile = obj.GetComponent<Projectile>();
             projectile.SetColor(color);
             projectile.isFriendly = isFriendly;
-            projectile.move = transform.InverseTransformDirection(transform.up);
+            projectile.move = Quaternion.Euler(0, 0, -90) * transform.InverseTransformDirection(transform.up.normalized);
             cooldown = cooldownDuration;
         }
     }
