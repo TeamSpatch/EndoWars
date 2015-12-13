@@ -1553,13 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca9027f6426f98429393a09202d5d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownDuration: 0
-  area:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+  cooldownDuration: 5
 --- !u!4 &626629486
 Transform:
   m_ObjectHideFlags: 0
