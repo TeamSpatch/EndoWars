@@ -12,7 +12,7 @@ public class Canon : MonoBehaviour
 
     void Start()
     {
-        cooldown = 0f;
+        cooldown = cooldownDuration;
     }
 
     void Update()
