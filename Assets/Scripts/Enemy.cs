@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     public Projectile.Color color;
     public float forceFactor;
+    public float initialForceFactor;
     public float angularSpeed;
     public float cooldownDuration;
     public float chaseRange;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigid = GetComponent<Rigidbody2D>();
+        rigid.AddForce(new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f)).normalized * initialForceFactor);
         cooldown = 0f;
         isDead = false;
         isCaptured = false;

@@ -7,9 +7,7 @@ public class Hook : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") {
             Transform enemy = transform.parent;
-            Vector3 scale = enemy.localScale;
             enemy.parent = other.transform;
-            enemy.localScale = scale;
             enemy.gameObject.GetComponent<Enemy>().isCaptured = true;
             enemy.gameObject.GetComponent<Collider2D>().isTrigger = true;
             Rigidbody2D rigid = enemy.gameObject.GetComponent<Rigidbody2D>();

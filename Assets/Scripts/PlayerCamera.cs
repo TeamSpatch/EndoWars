@@ -18,8 +18,7 @@ public class PlayerCamera : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 v = new Vector3(rigid.velocity.x, rigid.velocity.y, 0f);
-        Vector3 target = player.position + v.normalized * offsetFactor;
+        Vector3 target = player.position + player.up.normalized * offsetFactor;
         target.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velocity, dampSmooth * Time.fixedDeltaTime);
     }

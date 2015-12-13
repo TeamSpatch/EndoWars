@@ -14,7 +14,7 @@ public class PlayerStatus : MonoBehaviour
         }
         set
         {
-            if (value > 0 && value < maxAntibody) {
+            if (value > 0 && value <= maxAntibody) {
                 _antibody = value;
             }
         }
@@ -28,7 +28,7 @@ public class PlayerStatus : MonoBehaviour
         }
         set
         {
-            if (value > 0 && value < maxBlackness) {
+            if (value > 0 && value <= maxBlackness) {
                 _blackness = value;
             }
         }

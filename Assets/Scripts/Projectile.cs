@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(move * speed * Time.fixedDeltaTime);
+        transform.parent.Translate(move * speed * Time.fixedDeltaTime);
     }
 
     public void SetColor(Color color)
@@ -42,13 +42,12 @@ public class Projectile : MonoBehaviour
                 Enemy enemy = other.gameObject.GetComponent<Enemy>();
                 if (!enemy.isCaptured && !enemy.isDead && (color == Color.White || enemy.color == color)) {
                     enemy.Die();
-                    Destroy(gameObject);
                     return;
                 }
             }
         }
         if (other.gameObject.tag == "Wall") {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             return;
         }
     }
