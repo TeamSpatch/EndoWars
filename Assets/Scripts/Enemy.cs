@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
             Vector3 target = player.transform.position;
             target.z = transform.position.z;
             Vector3 direction = target - transform.position;
-            Debug.Log(direction.magnitude);
             if (direction.magnitude <= chaseRange) {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
                 Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
