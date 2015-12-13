@@ -6,7 +6,7 @@ public class Antibody : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player") {
-            ++other.gameObject.GetComponent<PlayerStatus>().antibody;
+            other.gameObject.GetComponent<PlayerStatus>().Gain();
             Destroy(gameObject);
         }
     }

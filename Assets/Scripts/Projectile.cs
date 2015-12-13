@@ -8,31 +8,18 @@ public class Projectile : MonoBehaviour
         White,
         Red,
         Green,
-        Blue,
     }
 
     public float speed;
+    public Color color;
     public bool isFriendly;
     [HideInInspector]
     public Vector3 move;
 
-    Color color;
 
     void FixedUpdate()
     {
         transform.parent.Translate(move * speed * Time.fixedDeltaTime);
-    }
-
-    public void SetColor(Color color)
-    {
-        this.color = color;
-        if (color == Color.Red) {
-            GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
-        } else if (color == Color.Green) {
-            GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
-        } else if (color == Color.Blue) {
-            GetComponent<SpriteRenderer>().color = UnityEngine.Color.blue;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -44,6 +31,19 @@ public class Projectile : MonoBehaviour
                     enemy.Die();
                     return;
                 }
+            } else if (other.gameObject.tag == "Elite") {
+                Elite elite = other.gameObject.GetComponent<Elite>();
+                if (!elite.isDead && color == Color.White) {
+                    elite.Die();
+                    Destroy(transform.parent.gameObject);
+                    return;
+                }
+            }
+        } else {
+            if (other.gameObject.tag == "Player") {
+                other.gameObject.GetComponent<PlayerStatus>().Damage();
+                Destroy(transform.parent.gameObject);
+                return;
             }
         }
         if (other.gameObject.tag == "Wall") {

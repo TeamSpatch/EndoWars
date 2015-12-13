@@ -4,9 +4,7 @@ using System.Collections;
 public class EnemySpawn : MonoBehaviour
 {
     public float cooldownDuration;
-    public int eliteRandomDenominator;
     public int numberBySpawn;
-    public bool spawnElite;
     public bool onSite;
 
     Vector2 min;
@@ -22,9 +20,6 @@ public class EnemySpawn : MonoBehaviour
             Transform topRight = transform.FindChild("AreaTopRight");
             max.x = topRight.position.x;
             max.y = topRight.position.y;
-        }
-        if (!spawnElite) {
-            --eliteRandomDenominator;
         }
         cooldown = 0f;
     }
@@ -53,15 +48,11 @@ public class EnemySpawn : MonoBehaviour
                 GameObject obj = GameObject.Instantiate(Resources.Load("Enemy") as GameObject);
                 obj.transform.position = pos;
                 Enemy enemy = obj.GetComponent<Enemy>();
-                int r = Random.Range(0, eliteRandomDenominator);
-                if (r == 0 && spawnElite) {
-                    enemy.color = Projectile.Color.White;
-                } else if (r <= eliteRandomDenominator / 3) {
+                int r = Random.Range(0, 2);
+                if (r == 0) {
                     enemy.color = Projectile.Color.Red;
-                } else if (r <= eliteRandomDenominator / 2 * 2) {
-                    enemy.color = Projectile.Color.Green;
                 } else {
-                    enemy.color = Projectile.Color.Blue;
+                    enemy.color = Projectile.Color.Green;
                 }
                 cooldown = cooldownDuration;
             }

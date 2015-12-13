@@ -231,50 +231,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176331213}
---- !u!1 &319120181
-GameObject:
+--- !u!1001 &191855748
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 319120183}
-  - 114: {fileID: 319120182}
-  m_Layer: 0
-  m_Name: Boss (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &319120182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 319120181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca9027f6426f98429393a09202d5d0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownDuration: 40
-  eliteRandomDenominator: 0
-  numberBySpawn: 3
-  spawnElite: 0
-  onSite: 1
---- !u!4 &319120183
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 319120181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 32, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &328238168
 Prefab:
   m_ObjectHideFlags: 0
@@ -288,7 +286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 415780, guid: 660c17a31ef27a04a8d9bc5ea8b6b8fb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 415780, guid: 660c17a31ef27a04a8d9bc5ea8b6b8fb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -597,50 +595,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!1 &812217578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 812217580}
-  - 114: {fileID: 812217579}
-  m_Layer: 0
-  m_Name: Boss (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &812217579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 812217578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca9027f6426f98429393a09202d5d0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownDuration: 40
-  eliteRandomDenominator: 0
-  numberBySpawn: 3
-  spawnElite: 0
-  onSite: 1
---- !u!4 &812217580
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 812217578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 32, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
 --- !u!1 &937368518
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +847,60 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!1001 &955013928
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 173736, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_Name
+      value: BossSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467040, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0a9a9b6a7d8a7714a9499a101ce1cd40, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &982204203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1062,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421224, guid: ebde3e1fae3d7f44f9ba011db976b6a9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 421224, guid: ebde3e1fae3d7f44f9ba011db976b6a9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1285,7 +1293,7 @@ GameObject:
   - 61: {fileID: 1683391756}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,40 +6,37 @@ public class PlayerStatus : MonoBehaviour
     public int maxAntibody;
     public int maxBlackness;
     [HideInInspector]
-    public int antibody
-    {
-        get
-        {
-            return _antibody;
-        }
-        set
-        {
-            if (value > 0 && value <= maxAntibody) {
-                _antibody = value;
-            }
-        }
-    }
+    public int antibody { get; private set; }
     [HideInInspector]
-    public int blackness
-    {
-        get
-        {
-            return _blackness;
-        }
-        set
-        {
-            if (value > 0 && value <= maxBlackness) {
-                _blackness = value;
-            }
-        }
-    }
+    public int blackness { get; private set; }
 
-    int _antibody;
-    int _blackness;
+    int level;
 
     void Start()
     {
         antibody = 0;
         blackness = 0;
+        level = 0;
+    }
+
+    public void Hook()
+    {
+        if (blackness < maxBlackness) {
+            ++blackness;
+        }
+    }
+
+    public void Damage()
+    {
+        if (antibody > 0) {
+            --antibody;
+        }
+    }
+
+    public void Gain()
+    {
+        if (antibody < maxAntibody) {
+            ++antibody;
+        }
     }
 }
