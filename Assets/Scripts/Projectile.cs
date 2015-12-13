@@ -43,12 +43,13 @@ public class Projectile : MonoBehaviour
                 if (!enemy.isCaptured && !enemy.isDead && (color == Color.White || enemy.color == color)) {
                     enemy.Die();
                     Destroy(gameObject);
+                    return;
                 }
             }
-        } else {
-            if (other.tag == "Player") {
-                Debug.Log("PLAYER GOT HIT");
-            }
+        }
+        if (other.gameObject.tag == "Wall") {
+            Destroy(gameObject);
+            return;
         }
     }
 }

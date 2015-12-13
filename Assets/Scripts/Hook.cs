@@ -21,8 +21,4 @@ public class Hook : MonoBehaviour
             canon.enabled = true;
         }
     }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-    }
 }
