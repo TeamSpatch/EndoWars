@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float forceFactor;
     public float angularSpeed;
     public float cooldownDuration;
+    public float chaseRange;
     [HideInInspector]
     public bool isDead { get; private set; }
     [HideInInspector]
@@ -31,15 +32,18 @@ public class Enemy : MonoBehaviour
             Vector3 target = player.transform.position;
             target.z = transform.position.z;
             Vector3 direction = target - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
-            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, angularSpeed * Time.fixedDeltaTime);
-            if (cooldown > 0f) {
-                cooldown -= Time.fixedDeltaTime;
-            }
-            if (cooldown <= 0f) {
-                rigid.AddForce(forceFactor * (new Vector2(target.x, target.y) - new Vector2(transform.position.x, transform.position.y)).normalized);
-                cooldown = cooldownDuration;
+            Debug.Log(direction.magnitude);
+            if (direction.magnitude <= chaseRange) {
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, angularSpeed * Time.fixedDeltaTime);
+                if (cooldown > 0f) {
+                    cooldown -= Time.fixedDeltaTime;
+                }
+                if (cooldown <= 0f) {
+                    rigid.AddForce(forceFactor * (new Vector2(target.x, target.y) - new Vector2(transform.position.x, transform.position.y)).normalized);
+                    cooldown = cooldownDuration;
+                }
             }
         }
     }

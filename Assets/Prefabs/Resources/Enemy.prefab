@@ -176,9 +176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
-  forceFactor: 400
+  forceFactor: 450
   angularSpeed: 9
   cooldownDuration: 0.5
+  chaseRange: 40
 --- !u!212 &21281740
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -219,6 +220,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: color
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceFactor
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chaseRange
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
