@@ -29,6 +29,7 @@ GameObject:
   - 50: {fileID: 5079474}
   - 114: {fileID: 11466300}
   - 60: {fileID: 6077646}
+  - 114: {fileID: 11430976}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -183,6 +184,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceFactor: 50
   cooldownDuration: 0.4
+--- !u!114 &11430976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb6b2b6b3341ef46b90b53960128758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAntibody: 9
+  maxBlackness: 7
+  blackness: 0
 --- !u!114 &11466300
 MonoBehaviour:
   m_ObjectHideFlags: 1
