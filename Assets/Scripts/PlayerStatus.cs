@@ -115,8 +115,11 @@ public class PlayerStatus : MonoBehaviour
             if ((level == 1 && antibody == 1) || (level == 2 && antibody == 3) || (level == 3 && antibody == 5)) {
                 ++level;
                 maxBlackness += blacknessByLevel;
-                if (level == 4) {
+                if (level == 3) {
                     level1.transform.FindChild("Glow").gameObject.SetActive(false);
+                    level3.transform.FindChild("Glow").gameObject.SetActive(true);
+                } else if (level == 4) {
+                    level3.transform.FindChild("Glow").gameObject.SetActive(false);
                     level4.transform.FindChild("Glow").gameObject.SetActive(true);
                 }
             }
