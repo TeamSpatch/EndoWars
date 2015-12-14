@@ -17,7 +17,9 @@ public class PlayerStatus : MonoBehaviour
 
     bool isDead;
     float deadTimer;
-    SpriteRenderer sprite;
+    SpriteRenderer level1;
+    SpriteRenderer level2;
+    SpriteRenderer level3;
 
     void Start()
     {
@@ -26,16 +28,64 @@ public class PlayerStatus : MonoBehaviour
         level = 1;
         isDead = false;
         deadTimer = 5f;
-        sprite = GetComponent<SpriteRenderer>();
+        level1 = transform.FindChild("Level1").GetComponent<SpriteRenderer>();
+        level2 = transform.FindChild("Level2").GetComponent<SpriteRenderer>();
+        level3 = transform.FindChild("Level3").GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (isDead) {
-            sprite.color = Color.Lerp(sprite.color, Color.black, 0.5f * Time.deltaTime);
+            level1.color = Color.Lerp(level1.color, Color.black, 0.5f * Time.deltaTime);
+            level2.color = Color.Lerp(level2.color, Color.black, 0.5f * Time.deltaTime);
+            level3.color = Color.Lerp(level3.color, Color.black, 0.5f * Time.deltaTime);
             deadTimer -= Time.deltaTime;
             if (deadTimer <= 0f) {
                 SceneManager.LoadScene("lose");
+            }
+        } else {
+            if (level == 2) {
+                {
+                    Color color = level1.color;
+                    if (color.a <= 0.1f) {
+                        color.a = 0f;
+                    } else {
+                        color.a = Mathf.Lerp(color.a, 0f, 0.5f * Time.deltaTime);
+                    }
+                    level1.color = color;
+                }
+                {
+                    Color color = level2.color;
+                    if (color.a >= 0.9f) {
+                        color.a = 1f;
+                    } else {
+                        color.a = Mathf.Lerp(color.a, 1f, 0.5f * Time.deltaTime);
+                    }
+                    level2.color = color;
+                }
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.5f, 1.5f, 1f), 0.5f * Time.deltaTime);
+            } else if (level == 3) {
+                {
+                    Color color = level2.color;
+                    if (color.a <= 0.1f) {
+                        color.a = 0f;
+                    } else {
+                        color.a = Mathf.Lerp(color.a, 0f, 0.5f * Time.deltaTime);
+                    }
+                    level2.color = color;
+                }
+                {
+                    Color color = level3.color;
+                    if (color.a >= 0.9f) {
+                        color.a = 1f;
+                    } else {
+                        color.a = Mathf.Lerp(color.a, 1f, 0.5f * Time.deltaTime);
+                    }
+                    level3.color = color;
+                }
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2f, 2f, 1f), 0.5f * Time.deltaTime);
+            } else if (level == 4) {
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2.5f, 2.5f, 1f), 0.5f * Time.deltaTime);
             }
         }
     }
