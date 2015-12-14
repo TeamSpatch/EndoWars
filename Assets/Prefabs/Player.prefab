@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   cooldownDuration: 0.9
-  spawnOffset: {x: 2.5, y: 0, z: 0}
+  spawnOffset: {x: 2, y: 0, z: 0}
   isFriendly: 1
 --- !u!114 &11404610
 MonoBehaviour:
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb6b2b6b3341ef46b90b53960128758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAntibody: 5
   maxBlackness: 4
+  blacknessByLevel: 2
 --- !u!114 &11466300
 MonoBehaviour:
   m_ObjectHideFlags: 1

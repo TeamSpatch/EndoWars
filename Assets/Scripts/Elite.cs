@@ -57,6 +57,7 @@ public class Elite : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         yield return new WaitForSeconds(0.1f);
+        GameObject.Find("Director").GetComponent<EliteSpawn>().Died();
         Destroy(gameObject);
     }
 }
