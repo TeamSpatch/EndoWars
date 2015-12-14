@@ -32,10 +32,10 @@ public class Elite : MonoBehaviour
                 if (cooldown <= 0f) {
                     GameObject obj = GameObject.Instantiate(Resources.Load("WhiteProjectile") as GameObject);
                     obj.transform.position = transform.position + transform.TransformDirection(spawnOffset);
-                    obj.transform.rotation = transform.rotation;
+                    obj.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg, Vector3.forward);
                     Projectile projectile = obj.transform.FindChild("Projectile").GetComponent<Projectile>();
                     projectile.isFriendly = false;
-                    projectile.move = (Quaternion.Euler(0, 0, 180f) * transform.InverseTransformDirection(transform.up.normalized)).normalized;
+                    projectile.move = (Quaternion.Euler(0, 0, -90f) * transform.InverseTransformDirection(transform.up.normalized)).normalized;
                     cooldown = cooldownDuration;
                 }
             }

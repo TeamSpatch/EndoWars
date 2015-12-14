@@ -29,6 +29,7 @@ public class Projectile : MonoBehaviour
                 Enemy enemy = other.gameObject.GetComponent<Enemy>();
                 if (!enemy.isCaptured && !enemy.isDead && (color == Color.White || enemy.color == color)) {
                     enemy.Die();
+                    Destroy(transform.parent.gameObject);
                     return;
                 }
             } else if (other.gameObject.tag == "Elite") {
