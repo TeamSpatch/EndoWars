@@ -58,7 +58,7 @@ public class PlayerStatus : MonoBehaviour
                     color.a = (color.a >= 0.9f ? 1f : Mathf.Lerp(color.a, 1f, 0.5f * Time.deltaTime));
                     level2.color = color;
                 }
-                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.5f, 1.5f, 1f), 0.5f * Time.deltaTime);
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.3f, 1.3f, 1f), 0.5f * Time.deltaTime);
             } else if (level == 3) {
                 {
                     Color color = level2.color;
@@ -70,7 +70,7 @@ public class PlayerStatus : MonoBehaviour
                     color.a = (color.a >= 0.9f ? 1f : Mathf.Lerp(color.a, 1f, 0.5f * Time.deltaTime));
                     level3.color = color;
                 }
-                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2f, 2f, 1f), 0.5f * Time.deltaTime);
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.6f, 1.6f, 1f), 0.5f * Time.deltaTime);
             } else if (level == 4) {
                 {
                     Color color = level3.color;
@@ -82,7 +82,7 @@ public class PlayerStatus : MonoBehaviour
                     color.a = (color.a >= 0.9f ? 1f : Mathf.Lerp(color.a, 1f, 0.5f * Time.deltaTime));
                     level4.color = color;
                 }
-                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2.5f, 2.5f, 1f), 0.5f * Time.deltaTime);
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2f, 2f, 1f), 0.5f * Time.deltaTime);
             }
         }
     }
@@ -115,6 +115,10 @@ public class PlayerStatus : MonoBehaviour
             if ((level == 1 && antibody == 1) || (level == 2 && antibody == 3) || (level == 3 && antibody == 5)) {
                 ++level;
                 maxBlackness += blacknessByLevel;
+                if (level == 4) {
+                    level1.transform.FindChild("Glow").gameObject.SetActive(false);
+                    level4.transform.FindChild("Glow").gameObject.SetActive(true);
+                }
             }
         }
     }
