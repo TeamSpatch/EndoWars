@@ -18,6 +18,15 @@ public class Hook : MonoBehaviour
             canon.color = enemy.gameObject.GetComponent<Enemy>().color;
             canon.enabled = true;
             other.gameObject.GetComponent<PlayerStatus>().Hook();
+            StartCoroutine(Animation(enemy));
         }
+    }
+
+    IEnumerator Animation(Transform enemy)
+    {
+        Animator animator = enemy.gameObject.GetComponent<Animator>();
+        animator.SetBool("Grabbed", true);
+        yield return new WaitForSeconds(0.733f);
+        animator.enabled = false;
     }
 }

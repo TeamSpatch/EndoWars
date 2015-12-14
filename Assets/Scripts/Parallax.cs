@@ -5,19 +5,19 @@ public class Parallax : MonoBehaviour
 {
     public float effectFactor;
 
-    Transform camera;
+    Transform reference;
     Vector3 previousPosition;
 
     void Start()
     {
-        camera = Camera.main.transform;
-        previousPosition = camera.position;
+        reference = Camera.main.transform;
+        previousPosition = reference.position;
     }
 
     void Update()
     {
-        Vector3 distance = camera.position - previousPosition;
+        Vector3 distance = reference.position - previousPosition;
         transform.position += Vector3.Scale(distance, new Vector3(effectFactor, effectFactor)) * -1;
-        previousPosition = camera.position;
+        previousPosition = reference.position;
     }
 }

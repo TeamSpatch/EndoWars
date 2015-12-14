@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isCaptured) {
+        if (!isCaptured && !isDead) {
             Vector3 target = player.transform.position;
             target.z = transform.position.z;
             Vector3 direction = target - transform.position;
